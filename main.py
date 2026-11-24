@@ -17,6 +17,8 @@ LINE = (
 
 assert len(LINE) <= 320, f"line is {len(LINE)} chars, over the 320 limit"
 assert "\n" not in LINE, "line must be a single line"
+assert "\r" not in LINE, "line must not contain a carriage return"
+assert LINE == LINE.strip(), "line must not start or end with whitespace"
 
 
 def main() -> None:
